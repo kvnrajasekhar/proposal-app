@@ -119,6 +119,7 @@ export default function ProposalScene() {
                 textTransform: 'uppercase',
                 color: 'rgba(201,114,138,0.65)',
                 marginBottom: '1.2rem',
+                zIndex: 10,
               }}>
                 With every lyric, every pause, every note
               </p>
@@ -144,6 +145,7 @@ export default function ProposalScene() {
                 lineHeight: 1.4,
                 marginBottom: '2rem',
                 color: 'rgba(240,234,245,0.9)',
+                zIndex: 10,
               }}>
                 "my love"?
               </h2>
@@ -155,6 +157,7 @@ export default function ProposalScene() {
                 color: 'rgba(240,234,245,0.4)',
                 marginBottom: '2.5rem',
                 lineHeight: 1.7,
+                zIndex: 10,
               }}>
                 Every song I hear reminds me of you.<br />
                 Every silence feels like a space you were meant to fill.
@@ -280,6 +283,7 @@ export default function ProposalScene() {
                 lineHeight: 1.9,
                 letterSpacing: '0.03em',
                 marginBottom: '2rem',
+                zIndex: 10,
               }}
             >
               You said yes to being my person.<br />
@@ -298,6 +302,7 @@ export default function ProposalScene() {
                 letterSpacing: '0.3em',
                 textTransform: 'uppercase',
                 color: 'rgba(212,168,90,0.5)',
+                zIndex: 10,
               }}
             >
               ✦ &nbsp; with love &nbsp; ✦

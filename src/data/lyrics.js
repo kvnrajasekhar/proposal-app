@@ -17,7 +17,7 @@ export const LYRICS = [
     id: 2,
     text: 'Jo aankhon mein pyaari si duniya basaayi',
     startTime: 3600,
-    charDelay: 70,
+    charDelay: 75,
   },
   {
     id: 3,
