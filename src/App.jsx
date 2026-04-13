@@ -35,11 +35,16 @@ export default function App() {
   const audioRef = useRef(null)
 
   const handleBegin = useCallback(() => {
-    if (audioRef.current) {
-      audioRef.current.volume = 0.85
-      audioRef.current.play().catch(err => console.warn('Audio blocked:', err))
-    }
+    // Start lyrics stage immediately
     setStage(STAGES.LYRICS)
+
+    // Start music after 500ms delay
+    setTimeout(() => {
+      if (audioRef.current) {
+        audioRef.current.volume = 0.85
+        audioRef.current.play().catch(err => console.warn('Audio blocked:', err))
+      }
+    }, 500)
   }, [])
 
   const handleLyricsComplete = useCallback(() => {
