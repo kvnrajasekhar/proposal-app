@@ -1,0 +1,123 @@
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400&family=Cinzel:wght@400;500&family=Raleway:wght@200;300;400&display=swap');
+@import "tailwindcss";
+
+:root {
+  --color-void: #050508;
+  --color-deep: #0a0a14;
+  --color-blush: #c9728a;
+  --color-blush-light: #e8a0b0;
+  --color-blush-dim: #7a3a4a;
+  --color-gold: #d4a85a;
+  --color-silver: #c8c8d8;
+  --color-text-primary: #f0eaf5;
+  --color-text-secondary: #6a5a7a;
+  --font-display: 'Cinzel', serif;
+  --font-body: 'Cormorant Garamond', serif;
+  --font-light: 'Raleway', sans-serif;
+}
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+html, body, #root {
+  width: 100%; height: 100%;
+  overflow: hidden;
+  background: var(--color-void);
+  color: var(--color-text-primary);
+}
+
+body {
+  font-family: var(--font-body);
+  -webkit-font-smoothing: antialiased;
+}
+
+.nebula-bg {
+  position: fixed; inset: 0;
+  background:
+    radial-gradient(ellipse 70% 50% at 15% 85%, rgba(201, 114, 138, 0.13) 0%, transparent 55%),
+    radial-gradient(ellipse 50% 70% at 85% 15%, rgba(83, 49, 124, 0.18) 0%, transparent 60%),
+    radial-gradient(ellipse 80% 80% at 50% 50%, rgba(13, 26, 58, 0.4) 0%, transparent 75%),
+    linear-gradient(135deg, #050508 0%, #080612 40%, #0a0810 70%, #050508 100%);
+  pointer-events: none; z-index: 0;
+}
+
+.glass-card {
+  background: rgba(255,255,255,0.025);
+  border: 1px solid rgba(201, 114, 138, 0.18);
+  backdrop-filter: blur(24px);
+  -webkit-backdrop-filter: blur(24px);
+  box-shadow: 0 0 60px rgba(201,114,138,0.06), inset 0 1px 0 rgba(255,255,255,0.06);
+}
+
+.lyric-active {
+  color: var(--color-text-primary);
+  text-shadow: 0 0 40px rgba(201,114,138,0.7), 0 0 80px rgba(201,114,138,0.25);
+}
+
+.lyric-past { color: var(--color-text-secondary); filter: blur(0.4px); }
+
+@keyframes cursorBlink { 0%,100%{opacity:1} 50%{opacity:0} }
+.cursor-blink {
+  display: inline-block; width: 2px; height: 1em;
+  background: var(--color-blush); margin-left: 3px;
+  vertical-align: middle;
+  animation: cursorBlink 0.75s ease-in-out infinite;
+}
+
+@keyframes softPulse {
+  0%,100%{box-shadow:0 0 40px rgba(201,114,138,0.2),0 0 80px rgba(201,114,138,0.08)}
+  50%{box-shadow:0 0 70px rgba(201,114,138,0.4),0 0 130px rgba(201,114,138,0.15)}
+}
+.proposal-glow { animation: softPulse 3s ease-in-out infinite; }
+
+@keyframes shimmer {
+  0%{background-position:-200% center} 100%{background-position:200% center}
+}
+.shimmer-text {
+  background: linear-gradient(90deg, var(--color-blush-light) 0%, var(--color-gold) 30%, var(--color-blush-light) 60%, #e0d0f0 85%, var(--color-blush-light) 100%);
+  background-size: 200% auto;
+  background-clip: text; -webkit-background-clip: text; -webkit-text-fill-color: transparent;
+  animation: shimmer 5s linear infinite;
+}
+
+@keyframes ringFloat {
+  0%,100%{transform:translateY(0) rotate(-5deg)} 50%{transform:translateY(-12px) rotate(5deg)}
+}
+.ring-float { animation: ringFloat 4s ease-in-out infinite; }
+
+.yes-btn {
+  background: linear-gradient(135deg, rgba(201,114,138,0.18), rgba(212,168,90,0.15));
+  border: 1px solid rgba(201,114,138,0.45);
+  transition: all 0.35s ease;
+  cursor: pointer;
+}
+.yes-btn:hover {
+  background: linear-gradient(135deg, rgba(201,114,138,0.32), rgba(212,168,90,0.25));
+  border-color: rgba(201,114,138,0.7);
+  transform: translateY(-2px);
+  box-shadow: 0 8px 30px rgba(201,114,138,0.25);
+}
+
+.no-btn {
+  background: transparent;
+  border: 1px solid rgba(255,255,255,0.1);
+  transition: all 0.35s ease;
+  cursor: pointer;
+}
+.no-btn:hover {
+  border-color: rgba(255,255,255,0.2);
+  background: rgba(255,255,255,0.03);
+}
+
+.lyrics-scroll { overflow-y: auto; scrollbar-width: none; }
+.lyrics-scroll::-webkit-scrollbar { display: none; }
+
+#confetti-canvas { position:fixed;inset:0;pointer-events:none;z-index:999; }
+
+@keyframes fadeInUp {
+  from{opacity:0;transform:translateY(20px)} to{opacity:1;transform:translateY(0)}
+}
+.fade-in-up { animation: fadeInUp 0.8s ease forwards; }
+
+@keyframes starTwinkle {
+  0%,100%{opacity:0.2} 50%{opacity:1}
+}
